@@ -18,6 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_profile"
+        android:drawablePadding="8dp"
         android:hint="@string/full_name"
         android:inputType="text" />
 
@@ -26,6 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/ic_mobile"
+        android:drawablePadding="8dp"
         android:hint="@string/mobile_number"
         android:inputType="number" />
 
@@ -74,17 +78,19 @@
         android:id="@+id/termsAndConditionCheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/terms_and_conditions"
-        android:textColor="@color/blue"
-        android:layout_marginTop="16dp"/>
+        android:textColor="@color/blue" />
 
     <Button
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_button"
         android:text="@string/signup"
         android:textAllCaps="false"
-        android:layout_marginTop="24dp"/>
+        android:textColor="@color/white" />
 
 
 </LinearLayout>

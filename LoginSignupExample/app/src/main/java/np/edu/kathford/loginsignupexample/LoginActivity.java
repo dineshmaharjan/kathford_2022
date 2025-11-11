@@ -1,10 +1,12 @@
 package np.edu.kathford.loginsignupexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,6 +18,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button loginButton;
 
+    private TextView signupTextView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         userNameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        signupTextView = findViewById(R.id.signupTextView);
 
 //        loginButton.setOnClickListener(this);
 
@@ -42,6 +47,16 @@ public class LoginActivity extends AppCompatActivity {
                     passwordEditText.setText(null);
                 }
 
+            }
+        });
+
+        signupTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //routing or navigation
+                Intent intent = new Intent(LoginActivity.this,
+                        SignupActivity.class);
+                startActivity(intent);
             }
         });
 
