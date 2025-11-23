@@ -43,10 +43,24 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("mobile", mobileNumber);
                 intent.putExtra("is_active", true);
 
-                startActivity(intent);
+//                startActivity(intent);
 
-
+                    startActivityForResult(intent, 201);
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == resultCode && data != null){
+            int acknowledge = data.getIntExtra("ack",0);
+            resultTextView.setText(String.valueOf(acknowledge));
+        }
+
+
     }
 }
