@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/javaItem"
+        android:title="Java" />
+
+    <item
+        android:id="@+id/androidItem"
+        android:title="Android" />
+
+    <item
+        android:id="@+id/economicsItem"
+        android:title="Applied Economics" />
+
+</menu>
