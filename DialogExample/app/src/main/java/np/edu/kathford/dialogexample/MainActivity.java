@@ -34,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        dialogFragmentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogoutDialogFragment logoutDialogFragment=
+                        new LogoutDialogFragment();
+                logoutDialogFragment.show(getSupportFragmentManager(),
+                        "LogoutDialogFragment");
+            }
+        });
     }
 
 
