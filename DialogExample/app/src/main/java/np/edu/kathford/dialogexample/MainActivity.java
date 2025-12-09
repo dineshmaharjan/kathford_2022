@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -38,12 +40,51 @@ public class MainActivity extends AppCompatActivity {
         dialogFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogoutDialogFragment logoutDialogFragment=
+                LogoutDialogFragment logoutDialogFragment =
                         new LogoutDialogFragment();
                 logoutDialogFragment.show(getSupportFragmentManager(),
                         "LogoutDialogFragment");
             }
         });
+
+
+        customDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                customDialog();
+
+            }
+        });
+    }
+
+    private void customDialog(){
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(MainActivity.this);
+        View view = getLayoutInflater()
+                .inflate(R.layout.dialog_simple_interest, null);
+        EditText principalEditText = view.findViewById(R.id.principalEditText);
+        EditText timeEditText = view.findViewById(R.id.timeEditText);
+        EditText rateEditText = view.findViewById(R.id.rateEditText);
+        TextView resultTextView = view.findViewById(R.id.resultTextView);
+        Button calculateButton = view.findViewById(R.id.calculateButton);
+
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double principal = Double.parseDouble(principalEditText.getText().toString().trim());
+                double rate = Double.parseDouble(rateEditText.getText().toString().trim());
+                int time = Integer.parseInt(timeEditText.getText().toString().trim());
+
+                double simpleInterest=(principal * time * rate)/100;
+
+                resultTextView.setText("The result is: "+simpleInterest);
+
+            }
+        });
+
+        builder.setView(view);
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 
 
