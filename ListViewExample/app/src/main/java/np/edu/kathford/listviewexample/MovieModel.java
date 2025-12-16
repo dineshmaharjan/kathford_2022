@@ -14,6 +14,7 @@ public class MovieModel {
         this.name=name;
         this.duration=duration;
         this.poster=poster;
+        this.description=description;
 
     }
 
