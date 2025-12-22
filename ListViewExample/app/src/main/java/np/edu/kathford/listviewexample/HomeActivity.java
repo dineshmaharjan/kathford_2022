@@ -33,8 +33,12 @@ public class HomeActivity extends AppCompatActivity {
         gridViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent gridViewIntent = new Intent(HomeActivity.this,
+//                        MovieGridViewActivity.class);
+//                startActivity(gridViewIntent);
+
                 Intent gridViewIntent = new Intent(HomeActivity.this,
-                        MovieGridViewActivity.class);
+                        GridViewMovieActivity.class);
                 startActivity(gridViewIntent);
 
             }
