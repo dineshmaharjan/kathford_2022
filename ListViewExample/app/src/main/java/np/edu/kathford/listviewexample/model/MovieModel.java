@@ -1,4 +1,4 @@
-package np.edu.kathford.listviewexample;
+package np.edu.kathford.listviewexample.model;
 
 public class MovieModel {
     private int id;

@@ -1,10 +1,9 @@
-package np.edu.kathford.listviewexample;
+package np.edu.kathford.listviewexample.screens;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+import np.edu.kathford.listviewexample.adapter.CustomListViewAdapter;
+import np.edu.kathford.listviewexample.model.MovieModel;
+import np.edu.kathford.listviewexample.R;
+
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     //data source
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             "Gita", "Sita", "Hari", "Hari Maya"};
 
     private ArrayList<MovieModel> movieList;
-    private  CustomListViewAdapter adapter;
+    private CustomListViewAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override

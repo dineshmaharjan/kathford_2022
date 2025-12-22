@@ -1,4 +1,4 @@
-package np.edu.kathford.listviewexample;
+package np.edu.kathford.listviewexample.screens;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import np.edu.kathford.listviewexample.R;
 
 public class HomeActivity extends AppCompatActivity {
 

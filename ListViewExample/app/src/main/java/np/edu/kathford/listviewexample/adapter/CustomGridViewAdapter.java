@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import np.edu.kathford.listviewexample.MovieModel;
+import np.edu.kathford.listviewexample.model.MovieModel;
 import np.edu.kathford.listviewexample.R;
 
 public class CustomGridViewAdapter extends ArrayAdapter<MovieModel> {

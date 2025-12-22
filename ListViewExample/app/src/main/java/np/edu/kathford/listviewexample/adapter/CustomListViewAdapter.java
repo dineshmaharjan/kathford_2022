@@ -1,4 +1,4 @@
-package np.edu.kathford.listviewexample;
+package np.edu.kathford.listviewexample.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import np.edu.kathford.listviewexample.model.MovieModel;
+import np.edu.kathford.listviewexample.R;
 
 public class CustomListViewAdapter extends ArrayAdapter<MovieModel> {
     private  Context context;

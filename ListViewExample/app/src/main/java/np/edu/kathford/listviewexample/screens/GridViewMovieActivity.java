@@ -1,4 +1,4 @@
-package np.edu.kathford.listviewexample;
+package np.edu.kathford.listviewexample.screens;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+import np.edu.kathford.listviewexample.model.MovieModel;
+import np.edu.kathford.listviewexample.R;
 import np.edu.kathford.listviewexample.adapter.CustomGridViewAdapter;
 
 public class GridViewMovieActivity extends AppCompatActivity {
@@ -33,7 +35,8 @@ public class GridViewMovieActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MovieModel movieModel = movieList.get(position);
-                Toast.makeText(GridViewMovieActivity.this, movieModel.getName(),
+                Toast.makeText(GridViewMovieActivity.this,
+                        movieModel.getName(),
                         Toast.LENGTH_SHORT).show();
 
             }
