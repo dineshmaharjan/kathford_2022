@@ -29,6 +29,7 @@
         <activity android:name=".screens.MovieGridViewActivity"/>
 
         <activity android:name=".screens.GridViewMovieActivity"/>
+        <activity android:name=".screens.RecyclerViewExampleActivity"/>
     </application>
 
 </manifest>

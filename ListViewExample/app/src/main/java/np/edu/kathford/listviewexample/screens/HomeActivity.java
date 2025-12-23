@@ -50,6 +50,11 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent recyclerViewIntent= new Intent(
+                        HomeActivity.this, RecyclerViewExampleActivity.class
+                );
+                startActivity(recyclerViewIntent);
+
             }
         });
     }
