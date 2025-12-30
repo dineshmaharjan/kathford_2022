@@ -50,7 +50,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
 
-    private long addStudent(Student student) {
+    public long addStudent(Student student) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -62,7 +62,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
-    private int updateStudent(Student student) {
+    public int updateStudent(Student student) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -76,7 +76,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
-    private void getAllStudents() {
+    public void getAllStudents() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ArrayList<Student> studentArrayList = new ArrayList<>();
@@ -100,7 +100,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
-    private int deleteStudent(int id) {
+    public int deleteStudent(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "id=?",
                 new String[]{String.valueOf(id)});
