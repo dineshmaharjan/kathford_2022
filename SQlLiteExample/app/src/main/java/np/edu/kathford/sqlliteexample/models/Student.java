@@ -6,6 +6,9 @@ public class Student {
     private String address;
     private String mobileNumber;
 
+    public Student() {
+    }
+
     public Student(int id,
                    String fullName,
                    String address,
