@@ -25,8 +25,8 @@ public class DbHandler extends SQLiteOpenHelper {
     private static final String MOBILE_NUMBER = "mobile_number";
 
     private static final String CREATE_TABLE_QUERY = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" +
-            ID + " INTEGER PRIMARY KEY AUTOINCREMENT " + FULL_NAME + " TEXT NOT NULL " +
-            ADDRESS + " TEXT NOT NULL " + MOBILE_NUMBER + " TEXT NOT NULL " + ")";
+            ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," + FULL_NAME + " TEXT NOT NULL ," +
+            ADDRESS + " TEXT NOT NULL ," + MOBILE_NUMBER + " TEXT NOT NULL " + ")";
 
     public DbHandler(@Nullable Context context) {
 
@@ -76,18 +76,18 @@ public class DbHandler extends SQLiteOpenHelper {
 
     }
 
-    public void getAllStudents() {
+    public ArrayList<Student> getAllStudents() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ArrayList<Student> studentArrayList = new ArrayList<>();
 
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-        Student student = new Student();
         while (cursor.moveToNext()) {
-            int id = Integer.parseInt(cursor.getColumnName(cursor.getColumnIndexOrThrow(ID)));
-            String fullName = cursor.getColumnName(cursor.getColumnIndexOrThrow(FULL_NAME));
-            String mobileNumber = cursor.getColumnName(cursor.getColumnIndexOrThrow(MOBILE_NUMBER));
-            String address = cursor.getColumnName(cursor.getColumnIndexOrThrow(ADDRESS));
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow(ID));
+            String fullName = cursor.getString(cursor.getColumnIndexOrThrow(FULL_NAME));
+            String mobileNumber = cursor.getString(cursor.getColumnIndexOrThrow(MOBILE_NUMBER));
+            String address = cursor.getString(cursor.getColumnIndexOrThrow(ADDRESS));
+            Student student = new Student();
 
             student.setId(id);
             student.setAddress(address);
@@ -96,6 +96,8 @@ public class DbHandler extends SQLiteOpenHelper {
 
             studentArrayList.add(student);
         }
+
+        return studentArrayList;
 
 
     }

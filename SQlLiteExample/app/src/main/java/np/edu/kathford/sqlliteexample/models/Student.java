@@ -1,5 +1,7 @@
 package np.edu.kathford.sqlliteexample.models;
 
+import androidx.annotation.NonNull;
+
 public class Student {
     private int id;
     private String fullName;
@@ -49,5 +51,14 @@ public class Student {
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "" +
+                 id +
+                 fullName + '\'' +
+                 address + '\'' +
+                 mobileNumber + '\'';
     }
 }
